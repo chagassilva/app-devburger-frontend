@@ -1,0 +1,74 @@
+
+
+import { useNavigate, useResolvedPath } from "react-router-dom";
+import { useUser } from "../../hooks/UserContext";
+import {ShoppingCart, UserCircle } from "@phosphor-icons/react";
+
+import {
+
+    Container, Navigation, Options, Profile, LinkContainer, HeaderLink,
+    Logout,
+    Content
+
+} from "./style"
+import { useEffect } from "react";
+
+
+export function Header() {
+
+const navigate = useNavigate();
+const { logout, userInfo } = useUser();
+
+const { pathname } = useResolvedPath()
+
+// funcao chamada para fazer o logout do usuario no hook UserContext
+function logoutuser() {
+
+    logout();
+    navigate('/login')
+}
+    
+
+    return (
+
+        <Container>
+            <Content>
+                <Navigation>
+
+                    <div>
+                        <HeaderLink to='/home' $isAcive={pathname === '/home'}>Home</HeaderLink>
+                        <hr></hr>
+                        <HeaderLink to='/cardapio' $isAcive={pathname === '/cardapio'} >Cardapio</HeaderLink>
+                    </div>
+
+                </Navigation>
+
+                <Options>
+
+                    <Profile>
+                        <UserCircle size={22} weight="bold" />
+                        <div>
+                            <p>{userInfo.name}</p>
+                            <Logout onClick={logoutuser}>Sair</Logout>
+                        </div>
+
+
+                    </Profile>
+                    <LinkContainer>
+                        <HeaderLink  to={'/Carrinho'} ><ShoppingCart size={22} weight="bold"/></HeaderLink>
+                    </LinkContainer>
+
+                </Options>
+
+
+            </Content>
+
+        </Container>
+
+
+
+    )
+
+
+}
+
