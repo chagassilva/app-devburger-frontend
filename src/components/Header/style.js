@@ -8,9 +8,8 @@ import {Link} from 'react-router-dom';
 
 export const Container = styled.header`
 
-background-color: #fff;
+background-color: #1F1F1F;
 width: 100%;
-width: 72px;
 padding: 20px 0;
 
 `
@@ -20,8 +19,7 @@ export const Content = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
-max-width: 1280px;
-margin: 0 auto;
+margin: 0 55px;
 
 `
 
@@ -50,12 +48,17 @@ div{
 export const HeaderLink = styled(Link)`
 
 text-decoration: none;
-font-size: 16px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'Poppins', sans-serif;
+gap: 5px;
+font-size: 12px;
 font-weight: 400;
-color: ${props => props.$isAcive ? '#d88704' : '#9758a6'};
+color: ${props => props.$isAcive ? '#d88704' : '#fff'};
 
 &:hover{
-    color: #9758a6;
+    color:rgb(192, 192, 192);
     transition: 0.2s;
 }
 
@@ -70,6 +73,7 @@ justify-content: center;
 gap: 20px;
 
 
+
 `
 
 export const Profile = styled.div`
@@ -78,21 +82,23 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 10px;
-font-size: 14px;
+font-family: 'Poppins', sans-serif;
+font-size: 12px;
+color: #9758a6;
 
 p{
 
     font-size: 14px;
     font-weight: 300;
     color: ${(props) => props.theme.darkRed};
-    line-height: 90%;
+    line-height: 100%;
 
     span{
 
         font-weight: 600;
         color: #9758a6;
-        font-size: 14px;
-        line-height: 90%;
+        font-size: 13px;
+        line-height: 100%;
     }
 }
 

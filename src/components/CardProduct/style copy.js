@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import IconRating from '../../assets/Vector_Rating.png';
+//import IconRating from '../../assets/Vector_Rating.png';
 //import IconFavorite from '../../assets/Vector_Favorite.png';
 import BackgrounMain from '../../assets/Background_2.png';
 
@@ -126,13 +126,13 @@ color:rgb(255, 255, 255);
 
 `
 
-// export const IconRate = styled.div`
+export const IconRate = styled.div`
 
-// background-image: url(${IconRating});
-// background-repeat: no-repeat;
-// background-size: 19px 19px;
-// cursor: pointer;
-// `
+background-image: url(${IconRating});
+background-repeat: no-repeat;
+background-size: 19px 19px;
+cursor: pointer;
+`
 
 export const ContainerFavorite = styled.div`
 
@@ -146,35 +146,6 @@ img{
     position: absolute;
     top: -30px;
     cursor: pointer;
-}
-
-&:hover img {
-    opacity: 0.7;
-    transition: opacity 0.3s ease-in-out;
-}
-
-
-`
-
-
-
-export const ContainerRating = styled.div`
-
-
-display: flex;
-justify-content: center;
-align-items: flex-start;
-
-
-img{
-    
-    cursor: pointer;
-    z-index: 1;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: -30px;
-    left: 0;
 }
 
 &:hover img {

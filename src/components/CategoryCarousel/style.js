@@ -3,19 +3,27 @@ import styled from "styled-components";
 
 
 
+export const Carousel = styled.div`
+
+margin: 60px 0 60px 0;
+
+`
+
+
 
 export const Container = styled.div`
 text-align: center;
-width: 70%;
+width: 45%;
 
 
 .carousel-item{
-    height:100%;
-    width: 100%;
+    height:auto;
+    width: auto;
     background-size: cover;
     background-position: center;
-    margin-top: 15px;
-    padding-right: 15px;
+    margin: 25px 0;
+    padding-right: 10px;
+    padding-left: 10px;
 
     h4{
         background-color:rgb(0, 0, 0, 0.5);
@@ -28,6 +36,16 @@ width: 70%;
 
 }
 
+.react-multiple-carousel__arrow--right {
+    right: calc(0% + 1px);
+}
+
+.react-multiple-carousel__arrow--left {
+    left: calc(0% + 1px);
+
+}
+
+
 button{
 
     background-color:#ccc;
@@ -39,6 +57,7 @@ button:hover{
 }
 
 `
+
 
 export const Title = styled.h2`
 

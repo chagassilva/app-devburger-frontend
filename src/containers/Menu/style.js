@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
 import BackgroundBannerMenu from '../../assets/BackgroundBannerMenu.svg';
+import BackgrounMain2 from '../../assets/Background_1.png';
 import { Link } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ export const ContainerMenuMain = styled.div`
 
 width: 100%;
 min-height: 100vh;
-
+background-image: url(${BackgrounMain2});
 `
 
 export const BannerMenu = styled.div`
@@ -42,10 +42,11 @@ h1{
 
 span{
 
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 400;
     color: #fff;
     margin-top: 10px;
+    line-height: 69%;
     font-family:'Poppins', sans-serif;
 }
 

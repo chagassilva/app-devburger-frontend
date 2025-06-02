@@ -46,7 +46,7 @@ function logoutuser() {
                 <Options>
 
                     <Profile>
-                        <UserCircle size={22} weight="bold" />
+                        <UserCircle size={22} color="white" />
                         <div>
                             <p>{userInfo.name}</p>
                             <Logout onClick={logoutuser}>Sair</Logout>
@@ -55,7 +55,7 @@ function logoutuser() {
 
                     </Profile>
                     <LinkContainer>
-                        <HeaderLink  to={'/Carrinho'} ><ShoppingCart size={22} weight="bold"/></HeaderLink>
+                        <HeaderLink  to={'/Carrinho'} ><ShoppingCart size={22} color="white" />Pedidos</HeaderLink>
                     </LinkContainer>
 
                 </Options>

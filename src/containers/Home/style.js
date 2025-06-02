@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BackgrounMain from '../../assets/Background_2.png';
+import BackgrounMain from '../../assets/Background_1.png';
 import BannerHome from '../../assets/Banner_Home.svg';
 
 

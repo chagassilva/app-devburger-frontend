@@ -5,9 +5,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 text-align: center;
-width: 70%;
+max-width: 1482px;
+height: auto;
 margin-top: 80px;
-overflow-x: hidden;
+margin-bottom: 80px;
+overflow: hidden;
+/* background-color:rgb(27, 177, 139); */
+padding-left: 48px;
 
 .carousel-item-offer{
 
@@ -19,14 +23,31 @@ overflow-x: hidden;
 .react-multi-carousel-list{
 
 overflow: visible;
+    width: 100%;
+    height: 100%;
+
+}
+
+.react-multiple-carousel__arrow--right {
+    right: calc(0% + 1px);
+}
+
+.react-multiple-carousel__arrow--left {
+    left: calc(-3% + 1px);
 
 }
 
 
+
 button{
 
-    background-color:#ccc;
+    background-color:transparent;
+    color:#9758A6;
+ 
+
     &::before{color:rgb(0, 0, 0);}
+    
+
 }
 
 button:hover{

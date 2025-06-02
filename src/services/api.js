@@ -1,9 +1,14 @@
 import axios from 'axios';
 
-
 export const api =  axios.create({
-    baseURL:'https://app-devburger-backend-production.up.railway.app/',
+    baseURL:'http://localhost:3001',
 });
+
+// nuvem de produção
+
+// export const api =  axios.create({
+//     baseURL:'https://app-devburger-backend-production.up.railway.app',
+// });
 
 //interceptors para colocar o token no header
 
@@ -19,3 +24,5 @@ api.interceptors.request.use(
    } )
 
   
+
+

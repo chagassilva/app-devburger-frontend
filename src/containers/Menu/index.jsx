@@ -70,6 +70,11 @@ export function Menu() {
             setfilteredProduct(Newfiltered);
         }
     },[products, activeCategory]);
+
+
+
+
+    
     
 
     return (

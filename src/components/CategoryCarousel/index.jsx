@@ -64,6 +64,8 @@ export function CategoryCarousel() {
       itemClass="carousel-item"
     >
 
+
+
       {categories.map((category) => (
         <ContainerItens key={category.id} ImageURL={category.url} >
           <CategoryHomeButton
@@ -80,6 +82,8 @@ export function CategoryCarousel() {
           >{category.name}</CategoryHomeButton>
         </ContainerItens>
       ))}
+       
+  
           
     </Carousel>
 
