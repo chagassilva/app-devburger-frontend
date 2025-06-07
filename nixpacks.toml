@@ -1,0 +1,2 @@
+[phases.setup]
+nixPkgs = ["nodejs_20_18_1", "yarn-1_x"]
