@@ -31,4 +31,4 @@ DevBurger é um site moderno focado em hamburgueria, construído com React e Vit
 
 **Quero agradecer a uma das maiores escolas do Brasil para Desenvolvedore(a) que é o DevClub**
 
-**E também muito obrigado a todos que fazem o DevClu pela contruibuiçoes no desenvolvimento desse projeto**
+**E também muito obrigado a todos que fazem o DevClub pela contruibuiçoes no desenvolvimento desse projeto**
