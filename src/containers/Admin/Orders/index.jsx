@@ -18,6 +18,8 @@ import { Row } from './row';
 import { api } from '../../../services/api';
 import { FilterContainer, FilterOptinsAdmin } from './style';
 import { OrderStatusOpions } from './OrdersStatus';
+import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 
 // const rows = [

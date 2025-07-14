@@ -9,14 +9,14 @@ export const ProductImageAdmin = styled.img`
     height: 80px;
     padding: 10px;
     border-radius: 50%;
-   
+  
 `
 
 export const SelectSatus = styled(Select)`
     width: 200px;
     margin-left: 10px;
     margin-top: 10px;
-
+ 
 `
 
 export const FilterContainer = styled.div`
@@ -52,4 +52,3 @@ color: ${(props) => props.$isActiveStatus ? 'rgb(153, 66, 175)' : 'none'};
 
 
 `
-

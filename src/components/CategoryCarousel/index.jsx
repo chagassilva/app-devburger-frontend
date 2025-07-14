@@ -1,5 +1,5 @@
 
-import {api}  from "../../services/api"
+import { api } from "../../services/api"
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 import BarRectangleCategory from '../../assets/Rectangle_category_home.png';
@@ -7,88 +7,95 @@ import BarRectangleCategory from '../../assets/Rectangle_category_home.png';
 import { useState, useEffect } from 'react';
 import { CategoryHomeButton, Container, ContainerItens, TitleCategories } from "./style";
 import { Navigate, useNavigate } from "react-router-dom";
+import { Product } from "../../containers";
 
 
 export function CategoryCarousel() {
 
   const [categories, setCategories] = useState([]);
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
 
-  async function loadCategories() {
+    async function loadCategories() {
 
-    const {data} = await api.get('/categories');
-    
-    setCategories(data);
-    
-   
-  }
+      const { data } = await api.get('/categories');
 
-  loadCategories();
+      setCategories(data);
+
+
+    }
+
+    loadCategories();
 
   }, [])
 
   const responsive = {
     superLargeDesktop: {
-        breakpoint: {max: 4000, min: 3000},
-        items: 4,
+      breakpoint: { max: 4000, min: 3000 },
+      items: 4,
     },
     desktop: {
-        breakpoint: {max: 3000, min: 1280},
-        items: 4,
+      breakpoint: { max: 3000, min: 1280 },
+      items: 4,
     },
     tablet: {
-        breakpoint: {max: 1280, min: 690},
-        items: 3,
+      breakpoint: { max: 1280, min: 690 },
+      items: 3,
     },
     mobile: {
-        breakpoint: {max: 690, min: 0},
-        items: 2,
+      breakpoint: { max: 690, min: 0 },
+      items: 2,
     },
-};
+  };
 
 
   return (
 
     <Container>
-    <TitleCategories>CATEGORIAS</TitleCategories>
-    <img src={BarRectangleCategory} alt="" />
 
-    <Carousel
-      responsive={responsive}
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={3000}
-      dotListClass="custom-dot-list-style"
-      itemClass="carousel-item"
-    >
+      <TitleCategories>CATEGORIAS
+        <img src={BarRectangleCategory} alt="" />
+      </TitleCategories>
+
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item"
+      >
 
 
 
-      {categories.map((category) => (
-        <ContainerItens key={category.id} ImageURL={category.url} >
-          <CategoryHomeButton
+        {categories.map((category) => (
+          <ContainerItens key={category.id} ImageURL={category.url}>
 
-         
-          onClick={() => {
-            Navigate({
-              pathname: '/cardapio',
-              search: `?category=${category.id}`,
-            },);
-          }}
-          
-          
-          >{category.name}</CategoryHomeButton>
-        </ContainerItens>
-      ))}
-       
-  
-          
-    </Carousel>
+            {/* <img src={category.url} alt={category.name} /> */}
+
+            <CategoryHomeButton
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navigate(`/${category.name.toLowerCase().replace(/\s+/g, '-')}?category=${category.id}`)  // converte o nome para URL amigável               
+              }}
+            >
+              {category.name}
+            </CategoryHomeButton>
+
+
+
+
+
+          </ContainerItens>
+        ))}
+
+
+
+      </Carousel>
 
     </Container>
   )
 }
-
 

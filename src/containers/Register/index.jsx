@@ -110,7 +110,7 @@ export function Register() {
               <InputContainerLogin>
                 <label>Nome</label>
                 {/* nome foi alterado para name */}
-                <input type="text"  {...register("name")} />
+                <input type="text"  {...register("nome")} />
                 <p>{errors?.nome?.message}</p>
               </InputContainerLogin>
 

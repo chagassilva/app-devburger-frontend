@@ -21,7 +21,7 @@ export function Footer() {
 
         <ContainerFooter>
             
-            <p>Desenvolvido por DevClub - 2025 - Todos os direitos reservados</p>
+            <p>Desenvolvido por DevBurger- 2025 - Todos os direitos reservados</p>
 
         </ContainerFooter>
 

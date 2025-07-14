@@ -2,13 +2,14 @@
 
 import { useNavigate, useResolvedPath } from "react-router-dom";
 import { useUser } from "../../hooks/UserContext";
-import {ShoppingCart, UserCircle } from "@phosphor-icons/react";
+import { ShoppingCart, UserCircle } from "@phosphor-icons/react";
+import LogoHeader from "../../assets/Logo_Header.png";
 
 import {
 
     Container, Navigation, Options, Profile, LinkContainer, HeaderLink,
     Logout,
-    Content
+    Content,
 
 } from "./style"
 import { useEffect } from "react";
@@ -16,18 +17,18 @@ import { useEffect } from "react";
 
 export function Header() {
 
-const navigate = useNavigate();
-const { logout, userInfo } = useUser();
+    const navigate = useNavigate();
+    const { logout, userInfo } = useUser();
 
-const { pathname } = useResolvedPath()
+    const { pathname } = useResolvedPath()
 
-// funcao chamada para fazer o logout do usuario no hook UserContext
-function logoutuser() {
+    // funcao chamada para fazer o logout do usuario no hook UserContext
+    function logoutuser() {
 
-    logout();
-    navigate('/login')
-}
-    
+        logout();
+        navigate('/login')
+    }
+
 
     return (
 
@@ -35,10 +36,16 @@ function logoutuser() {
             <Content>
                 <Navigation>
 
+                    <HeaderLink to='/home' >
+                    <img src={LogoHeader} alt="Logo do restaurante" />
+                    </HeaderLink>
+
                     <div>
                         <HeaderLink to='/home' $isAcive={pathname === '/home'}>Home</HeaderLink>
                         <hr></hr>
                         <HeaderLink to='/cardapio' $isAcive={pathname === '/cardapio'} >Cardapio</HeaderLink>
+                        <hr></hr>
+                        <HeaderLink to='/contato' $isAcive={pathname === '/contato'} >Contato</HeaderLink>
                     </div>
 
                 </Navigation>
@@ -55,7 +62,7 @@ function logoutuser() {
 
                     </Profile>
                     <LinkContainer>
-                        <HeaderLink  to={'/Carrinho'} ><ShoppingCart size={22} color="white" />Pedidos</HeaderLink>
+                        <HeaderLink to={'/Carrinho'} ><ShoppingCart size={22} color="white" />Pedidos</HeaderLink>
                     </LinkContainer>
 
                 </Options>

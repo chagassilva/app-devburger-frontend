@@ -29,7 +29,7 @@ export function Home() {
             <ContainerCarrosel>
 
 
-                <CategoryCarousel />
+                <CategoryCarousel/>
                 <OffersCarousel />
 
 

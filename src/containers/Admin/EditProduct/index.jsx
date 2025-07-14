@@ -10,6 +10,7 @@ import { toast } from "react-toastify"
 import { formatPrice } from "../../../utils/formatPrice"
 import { useLocation } from "react-router-dom"
 import { func } from "prop-types"
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -26,7 +27,7 @@ export function EditProduct() {
 
   const [filename, setFilename] = useState(null)
   const [categories, setCategories] = useState(null)
-
+  const navigate = useNavigate()
   const location = useLocation();
   const product = location.state?.product || {};
 
@@ -112,7 +113,7 @@ export function EditProduct() {
                 register("file").onChange(e);
               }}
             />
-            {filename || "Upload de imagem"}
+            {filename ||  <span>Carregar imagem do produto</span>}
 
           </LabelUpload>
           <ErrorMessage>{errors.file?.message}</ErrorMessage>
@@ -123,11 +124,11 @@ export function EditProduct() {
           <ErrorMessage>{errors.category?.message}</ErrorMessage>
 
           <InputGroup>
-          <ContainerCheckBox>
-            <div>
-              <input type="checkbox" id="all" defaultChecked={product.offer} {...register("offer")}  />
-              <labe>Produto em oferta?</labe>
-            </div>
+            <ContainerCheckBox>
+              <div>
+                <input type="checkbox" id="all" defaultChecked={product.offer} {...register("offer")} />
+                <label> Produto em oferta?</label>
+              </div>
             </ContainerCheckBox>
           </InputGroup>
 
@@ -149,7 +150,7 @@ export function EditProduct() {
               />
             )} />
         </InputGroup>
-        <SubmitButton>Adcionar produto</SubmitButton>
+        <SubmitButton onClick={() => {navigate("/admin/produtos")}}>Adcionar produto</SubmitButton>
       </Form>
 
 

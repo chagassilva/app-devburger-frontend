@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -46,5 +47,33 @@ text-align: center;
 font-weight: bold;
 margin: 10px 5px
 
+
+`
+
+export const MooreProducts = styled(Link)`
+
+display: flex;
+width: 100%;
+justify-content: center;
+align-items: center;
+padding: 10px;
+position: relative;
+
+p{
+
+    font-size: 16px;
+    color: #9758a6;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-bottom: 1px solid #9758a6;
+    line-height: 15px;
+     position: absolute
+     
+    &:hover{
+        color: #6f357c;
+    } 
+
+}
 
 `

@@ -1,14 +1,23 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-export const api =  axios.create({
-    baseURL:'http://localhost:3001',
-});
+// export const api =  axios.create({
+//     baseURL:'http://localhost:3001',
+// });
 
 // nuvem de produção
 
 // export const api =  axios.create({
 //     baseURL:'https://app-devburger-backend-production.up.railway.app',
 // });
+
+import axios from "axios";
+
+export const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:3002"
+});
+
+
+
 
 //interceptors para colocar o token no header
 

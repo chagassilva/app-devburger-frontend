@@ -111,7 +111,7 @@ export function NewProduct() {
             register("file").onChange(e);
           }}        
            />
-           {filename || "Upload de imagem"}
+           {filename || <span>Carregar imagem do produto</span>}
 
         </LabelUpload>
         <ErrorMessage>{errors.file?.message}</ErrorMessage>

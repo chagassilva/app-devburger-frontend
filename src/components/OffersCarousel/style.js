@@ -2,13 +2,10 @@ import styled from "styled-components";
 
 
 
-
 export const Container = styled.div`
-text-align: center;
+
 max-width: 1482px;
 height: auto;
-margin-top: 80px;
-margin-bottom: 80px;
 overflow: hidden;
 /* background-color:rgb(27, 177, 139); */
 padding-left: 48px;
@@ -16,17 +13,18 @@ padding-left: 48px;
 .carousel-item-offer{
 
     padding-right: 40px;
-    margin-top: 60px;
+    
 
 }
 
 .react-multi-carousel-list{
 
-overflow: visible;
+    overflow: visible;
     width: 100%;
     height: 100%;
-
+    
 }
+
 
 .react-multiple-carousel__arrow--right {
     right: calc(0% + 1px);
@@ -69,15 +67,24 @@ display: flex;
 align-items:center;
 background-color:rgb(16, 206, 149); 
 padding-right: 15px;
+
 `
 
 export const TitleOffertoday = styled.div`
 
-    margin: 20px 0;
+    
     color:#61A120;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 32px;
     line-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    img{
+        margin: 30px 0 50px 0;
+        width:57px;
+        height: 6px;
+    }
 `

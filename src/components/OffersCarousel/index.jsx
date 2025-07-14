@@ -52,10 +52,11 @@ export function OffersCarousel() {
   return (
 
     <Container>
-    <TitleOffertoday>OFERTA DO DIA</TitleOffertoday>
+    <TitleOffertoday>OFERTA DO DIA
     <img src={BarRectangleOffer} alt="" />
-
-
+    </TitleOffertoday>
+    
+ 
     <Carousel
       responsive={responsive}
       infinite={true}
@@ -72,6 +73,8 @@ export function OffersCarousel() {
       ))}
           
     </Carousel>
+
+    
     
     </Container>
   )

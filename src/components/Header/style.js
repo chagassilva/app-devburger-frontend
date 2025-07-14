@@ -32,18 +32,19 @@ height: 72px;
 
 div{
 
-    margin-left: 20px;
+    margin-left: 80px;
     display: flex;
     align-items: center;
     gap: 20px;
 
     hr{
-        height: 20px;
+        height: 15px;
         border: 1px solid #bababa;
     }
 }
 
 `
+
 
 export const HeaderLink = styled(Link)`
 
@@ -53,7 +54,7 @@ align-items: center;
 justify-content: center;
 font-family: 'Poppins', sans-serif;
 gap: 5px;
-font-size: 12px;
+font-size: 14px;
 font-weight: 400;
 color: ${props => props.$isAcive ? '#d88704' : '#fff'};
 

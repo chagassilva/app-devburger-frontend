@@ -32,7 +32,7 @@ export default function SideNavAdmin() {
             <FooterMenuAdmin>
 
             <NavegatioLink to={"/login"} onClick={logout} >
-                <SignOut/>
+                <SignOut size={28} />
                 <span>Sair</span>
             </NavegatioLink>
                

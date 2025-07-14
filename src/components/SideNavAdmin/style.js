@@ -43,6 +43,12 @@ padding: 10px 20px;
 text-decoration: none;
 color: #ffffff;
 background-color: ${(props) => props.$isActive ? '#5c2669' : 'transparent'};
+font-size: 18px;
+font-family: 'Poppins', sans-serif;
+font-weight: 400;
+
+
+
 &:hover{
     background-color: #5c2669;
     color: #fff;

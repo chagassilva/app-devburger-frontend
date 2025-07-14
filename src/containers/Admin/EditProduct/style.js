@@ -11,13 +11,14 @@ export const Select = styled(ReactSelect)`
 export const Form = styled.form`
 
 border-radius: 8px;
-background-color:rgba(5, 5, 5, 0.54);
+background-color: #363636;
 padding: 20px;
-max-width: 380px;
+width: 447px;
+height:668px;
+border-radius:10px;
 display: flex;
 flex-direction: column;
 gap: 20px;
-
 
 `
 
@@ -50,8 +51,11 @@ border-radius: 8px;
 export const Label = styled.label`
 
 color: #fff;
-font-size: 14px;
-font-weight: 500;
+font-size: 18px;
+font-weight: 400;
+font-family: 'Poppins', sans-serif;
+line-height: 109%;
+letter-spacing:0;
 
 
 `
@@ -118,5 +122,16 @@ display: flex;
 gap: 15px;
 cursor: pointer;
 margin-top: 10px;
+
+label {
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    line-height: 109%;
+
+
+}
 
 `

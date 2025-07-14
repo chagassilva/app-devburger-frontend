@@ -1,4 +1,4 @@
-import { List, ListPlus, Receipt } from "@phosphor-icons/react"
+import { List, ListPlus, Receipt, PlusSquare, BoxArrowUp, NotePencil } from "@phosphor-icons/react"
 
 
 export const NavLinks = [
@@ -14,23 +14,23 @@ export const NavLinks = [
 
   {
     id: 1,
-    label: "Adicionar Produto",
+    label: "Cadastrar produto",
     path: "/admin/criar-produto",
-    icon: <ListPlus size={22} weight="fill" />,
+    icon: <PlusSquare size={22} weight="fill" />,
   },
 
   {
     id: 1,
-    label: "produtos",
+    label: "Listar produtos",
     path: "/admin/produtos",
-    icon: <List size={22} weight="fill" />,
+    icon: <BoxArrowUp  size={22} weight="fill" />,
   },
 
   {
     id: 1,
     label: "editar-produtos",
     path: "/admin/editar-produto",
-    icon: <List size={22} weight="fill" />,
+    icon: <NotePencil  size={22} weight="fill" />,
   },
 
 

@@ -14,12 +14,12 @@ import { api } from "../../../services/api";
 
 export function CheckoutForm() {
 
-  const {cartProducts, clearCart}= useCart()
+  const { cartProducts, clearCart } = useCart()
   const navigate = useNavigate()
   const stripe = useStripe();
   const elements = useElements();
 
-  const {state: {dpmCheckerLink}} = useLocation()
+  const { state: { dpmCheckerLink } } = useLocation()
   console.log(elements)
 
   const [message, setMessage] = useState(null);
@@ -40,17 +40,17 @@ export function CheckoutForm() {
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       redirect: "if_required",
-    //   confirmParams: {
-    //     // Make sure to change this to your payment completion page
-    //     return_url: "http://localhost:3000/finalizar-pedido",
-    //   },
+      //   confirmParams: {
+      //     // Make sure to change this to your payment completion page
+      //     return_url: "http://localhost:3000/finalizar-pedido",
+      //   },
     });
 
-    
+
     if (error?.type === "card_error" || error?.type === "validation_error") {
       setMessage(error.message);
       toast.error(error.message);
-    } else if(paymentIntent && paymentIntent.status === 'succeeded') {
+    } else if (paymentIntent && paymentIntent.status === 'succeeded') {
 
       try {
 
@@ -58,38 +58,38 @@ export function CheckoutForm() {
           return {
             id: product.id,
             quantity: product.quantity,
-            price: product.price,
+            price: product.price,           
           }
-    
+
         })
-    
-            const {status} = await api.post('/orders', {products},{
-                  
-              validateStatus: () => true,  
-        
-          })
-        
-            if(status === 200 || status === 201){
-        
-              
-              setTimeout(() => {
-                navigate(`/pedido-realizado?payment_intent_client_secret=${paymentIntent.client_secret}`)
-                clearCart()
-              }, 2000);
-        
-              toast.success("pedido realizado com sucesso");
-        
-            } else if (status === 409){
-          
-              toast.error("Falha ao realizar pedido");
-            } else{
-              throw new Error();
-            }
-           
-          } catch (error) {
-           toast.error("Falahou um erro ao fazer pedido.");           
-          } 
-            //toast.error("Falha ao realizar pedido");          
+
+        const { status } = await api.post('/orders', { products }, {
+
+          validateStatus: () => true,
+
+        })
+
+        if (status === 200 || status === 201) {
+
+
+          setTimeout(() => {
+            navigate(`/pedido-realizado?payment_intent_client_secret=${paymentIntent.client_secret}`)
+            clearCart()
+          }, 2000);
+
+          toast.success("pedido realizado com sucesso");
+
+        } else if (status === 409) {
+
+          toast.error("Falha ao realizar pedido");
+        } else {
+          throw new Error();
+        }
+
+      } catch (error) {
+        toast.error("Falahou um erro ao fazer pedido.");
+      }
+      //toast.error("Falha ao realizar pedido");          
     }
 
     setIsLoading(false);
@@ -102,17 +102,17 @@ export function CheckoutForm() {
   return (
 
     <div className="container-payment-stripe">
-    <form id="payment-form" onSubmit={handleSubmit}>
+      <form id="payment-form" onSubmit={handleSubmit}>
 
-      <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <button className="buttonstripe" disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-        </span>
-      </button>
-      {/* Show any error or success messages */}
-      {message && <div id="payment-message">{message}</div>}
-    </form>
+        <PaymentElement id="payment-element" options={paymentElementOptions} />
+        <button className="buttonstripe" disabled={isLoading || !stripe || !elements} id="submit">
+          <span id="button-text">
+            {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+          </span>
+        </button>
+        {/* Show any error or success messages */}
+        {message && <div id="payment-message">{message}</div>}
+      </form>
     </div>
   );
 }

@@ -78,9 +78,10 @@ export function Row({row, setOrders, orders}) {
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Quantidade</TableCell>
+                    <TableCell>ID</TableCell>
                     <TableCell>produto</TableCell>
                     <TableCell>Categoria</TableCell>
+                    <TableCell>Quantidade</TableCell>
                     <TableCell>Foto</TableCell>
                   </TableRow>
                 </TableHead>
@@ -92,6 +93,7 @@ export function Row({row, setOrders, orders}) {
                       </TableCell>
                       <TableCell>{product.name}</TableCell>
                       <TableCell>{product.category}</TableCell>
+                      <TableCell>{product.quantity}</TableCell>
                       <TableCell>
                         <ProductImageAdmin src={product.url} alt={product.name}/>
                         {/* {Math.round(historyRow.amount * row.price * 100) / 100} */}

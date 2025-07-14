@@ -13,32 +13,35 @@ export const UserProvider = ({ children }) => {
 
         setUserInfo(userInfo);
         localStorage.setItem('devburger:userdata', JSON.stringify(userInfo));
-        
+
     }
 
-   
-    const logout = () => { 
+
+    const logout = () => {
         setUserInfo({});
         localStorage.removeItem('devburger:userdata');
     }
 
 
-   useEffect(() => {
+    useEffect(() => {
 
-    const userInfoLocalStorage = localStorage.getItem('devburger:userdata');
-    if (userInfoLocalStorage) {
-        setUserInfo(JSON.parse(userInfoLocalStorage));
-    }
-     
-    setLoading(false);
+        const userInfoLocalStorage = localStorage.getItem('devburger:userdata');
 
-   }, [])
+        setTimeout(() => {
+            if (userInfoLocalStorage) {
+                setUserInfo(JSON.parse(userInfoLocalStorage));
+            }
 
- 
-   
+            setLoading(false);
+        },1000)
+
+    }, [])
+
+
+
 
     return (
-        <UserContext.Provider value={{ userInfo, putUserData, logout, loading  }}>
+        <UserContext.Provider value={{ userInfo, putUserData, logout, loading }}>
             {children}
         </UserContext.Provider>
     );
@@ -47,7 +50,7 @@ export const UserProvider = ({ children }) => {
 
 
 export const useUser = () => {
-    
+
     const context = useContext(UserContext);
 
     if (!context) {

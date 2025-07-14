@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Trash } from "@phosphor-icons/react";
 import { TableCart } from '../index'
 import { useCart } from '../../hooks/CartContext'
-import { EmptyCartProduct, ProductImage } from './style';
+import { EmptyCartProduct, MooreProducts, ProductImage } from './style';
 import PropTypes from 'prop-types';
 import { formatPrice } from '../../utils/formatPrice';
 
@@ -56,16 +56,19 @@ export function CartItems() {
               <TableCart.Td>
               <button className="deleteproductcart" onClick={() => removeProductInCart(product.id)}>X</button>
               </TableCart.Td>
+              
             </TableCart.Tr>
+            
           ))
 
          ) : (
           <EmptyCartProduct>  🛒 Nenhum produto no carrinho</EmptyCartProduct>
+          
          )}
 
       </TableCart.Body>
 
-
+        <MooreProducts to='/home'  ><p>&lt; Adicionar mais produtos</p></MooreProducts>
 
 
     </TableCart.Root>

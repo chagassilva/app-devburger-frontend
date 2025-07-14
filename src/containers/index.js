@@ -10,5 +10,9 @@ export * from './Admin/Orders';
 export * from './Admin/NewProduct';
 export * from './Admin/EditProduct';
 export * from './Admin/Product';
-
+export * from './Bebidas';
+export * from './Entradas';
+export * from './Sobremesas';
+export * from './hamburgueres';
+export * from './ThankYou';
 

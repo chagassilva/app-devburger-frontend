@@ -12,3 +12,4 @@ export * from './OffersCarousel';
 export * from './TableCart';
 export * from './stripe/CheckoutForm'
 export * from './SideNavAdmin'
+export * from './Spinner'
