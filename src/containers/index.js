@@ -13,6 +13,6 @@ export * from './Admin/Product';
 export * from './Bebidas';
 export * from './Entradas';
 export * from './Sobremesas';
-export * from './hamburgueres';
+export * from './Hamburgueres';
 export * from './ThankYou';
 
