@@ -6,7 +6,7 @@ import {
     Content,
 } from "./style";
 import { useNavigate } from "react-router-dom";
-import ImgHead from "../../assets/checkout.png";
+import ImgHead from "../../assets/Checkout.png";
 import IconVerification from "../../assets/icon_message-check.png";
 import LogoHeader from "../../assets/Logo4.png";
 
